@@ -6,11 +6,6 @@
 
 :root {
     font-size: 1em;
-    /*
-    font-family: 'Courier New', Courier, monospace;
-    --pwdWarning: flex;
-    --error: red;
-    */
 }
 
 ul {
@@ -23,7 +18,7 @@ li {
     margin:5px;
 }
 
-/*                              -- .container --                           */
+/*-------------------------------- .container --------------------------------*/
 .container {
     width: 100vw;
     height: 100vh;
@@ -36,7 +31,7 @@ li {
     display:grid;
     grid-area: 1/1/3/2; /* start row/col/  end row/col */
     background-color:darkcyan;
-    grid-template-rows: 0.75fr 2fr 1fr 1.25fr ;/*1fr repeat(3,1fr);*/
+    grid-template-rows: 0.75fr 2fr 1fr 1.25fr ;
     gap: 5px;
     color: white;
 }
@@ -44,10 +39,8 @@ li {
 .header {
     display:grid;
     grid-area: 1/2/2/3;
-   /* background-color: lightsalmon;*/
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr ; /*auto repeat(3fr);*/
-   /* gap: 0px; */
+    grid-template-columns: 1fr ;
 }
 
 
@@ -56,11 +49,11 @@ li {
     grid-area: 2/2/3/3;
     background-color:aqua;
     grid-template-rows: 1fr;            /* 1 row */
-    grid-template-columns: 2fr 1fr;     /* 2 columns - projects / notices */
+    grid-template-columns: 3.5fr 1fr;     /* 2 columns - projects / notices */
     gap: 5px;
 }
 
-/*                              -- .sidebar --                           */
+/*-------------------------------- .sidebar --------------------------------*/
 .sidebar>span {
     display:grid;
     grid-area: 1/1/2/1;
@@ -140,7 +133,6 @@ li {
     grid-area: 2/1/2/3;
     grid-template-rows: repeat(6,1fr);
     grid-template-columns: 1fr 3fr; 
-  /*  background-color: aqua; */
 }
 
 .sidebar>ul.system {
@@ -150,7 +142,7 @@ li {
     grid-template-columns: 1fr 3fr; 
 }
 
-/*                              -- .header --                           */
+/*-------------------------------- .header --------------------------------*/
 .header>div.upper {
     display:grid;
     grid-area: 1/1/2/2;
@@ -158,7 +150,6 @@ li {
     grid-template-rows: 1fr; 
     grid-template-columns: 1fr 6fr 2fr 1fr 2fr;
     background-color:white; 
-   /* gap:3px; */
 }
 
 
@@ -184,9 +175,7 @@ li {
     border:none;
     border-radius: 20px;
     height: 1.5rem;
-    
 }
-
 
 #h-3 {
     display:grid;
@@ -223,7 +212,6 @@ li {
     grid-template-rows: 1fr; 
     grid-template-columns:1fr 6fr repeat(3,1fr);
     background-color:white; 
-   /* gap:2px;*/
 }
 
 .header div.upper div,
@@ -283,7 +271,7 @@ button:active {
 }
 
 
-/*                              -- .content 1st column .content.projects --                           */
+/*-------------------------------- .content 1st column .content.projects --------------------------------*/
 .content >div.projects {
     grid-area: 1/1/2/2;
     display: grid;
@@ -291,7 +279,7 @@ button:active {
     grid-template-columns: 1fr;         /* 1 column */
 }
 
-.projects  > h2 {
+.projects  > h3 {
     grid-area: 1/1/2/2;
 }
 
@@ -314,127 +302,190 @@ button:active {
     background-color: white;
 }
 
-/*                             -- .content 2nd column  .content.notices --                           */
+/*-------------------------------- .content 2nd column  .content.notices --------------------------------*/
 .content>div.notices {
     grid-area: 1/2/2/3;
-    background-color: lightyellow;
+    background-color: aqua;
     display: grid;
-    height:fit-content;
+    align-items: start;
+    height: 100%; 
     grid-template-rows: 0.5fr 3fr 0.5fr 4fr;    /* notices -> 4 rows */ 
     grid-template-columns: 1fr;     /* notices -> 1 column */ 
     gap: 5px;
+    
 }
 
-.notices>h2#announce {
-    background-color: pink;
+/*-------------------------------- .notices  announcements--------------------------------*/
+.notices>h3#announce {
+    background-color: aqua;
     display:grid;
     width: 100%;
     grid-area: 1/1/2/2;
 }
 
 .notices div.announcements {
-    background-color: white;
     display:grid;
-    width: 100%;
     grid-area: 2/1/3/2;
+    width: 85%;
+    height:95%;
+    margin: 0px 0px 0px 10px;
+    background-color: white;
+    border-radius: 5px;  
 }
 
 .notices div.announcements>ul {
-    background-color: aqua;
     display:grid;
     width: 100%;
-    grid-area: 2/1/3/2;
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
 }
 
-.notices>h2#trend {
-    background-color: pink;
+/*----------list items----------*/
+.announcements>ul>li>h4{
+    text-decoration: none;
+    margin-bottom: -5px;
+}
+
+.a-1,
+.a-2,
+.a-3 {
+    display:grid;
+    font-size: 0.6rem;
+    padding: 0px 8px ;
+    width: 90%;
+}
+
+.a-2 {
+    border:none;
+    border-top: lightgrey;
+    border-bottom: lightgrey;
+    border-left: white;
+    border-right: white;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px 8px ;
+}
+
+/*-------------------------------- .notices  trending--------------------------------*/
+.notices>h3#trend {
+    background-color: aqua;
     display:grid;
     width: 100%;
     grid-area: 3/1/4/2;
 }
 
 .notices>div.trending {
-    height:fit-content;
+    display:grid;
+    grid-area:4/1/5/2;
+    width: 85%;
+    height:85%;
+    margin: 0px 0px 0px 10px;
+    background-color: white;
+    border-radius: 5px; 
 }
 
-.notices>div.trending ul {
-    background-color: white;
+.notices div.trending ul {
     display:grid;
     width: 100%;
-    grid-area: 4/1/5/2;
-    grid-template-rows: repeat(8, 1fr);    /* 6 rows */
-    grid-template-columns: 1fr 4fr;         /* 2 columns */
+    height: 100%;
+    background-color:white;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: 1fr 2.9fr 0.1fr;
+    border-radius: 5px;
 }
 
 
-li.t-1 {
+li.ti-1 {
     display:grid;
-    background-color:aqua;
+    background-color: white;
     grid-area: 1/1/3/2;
+    height: fit-content;
+    align-self: center;
 }
 
-li.t-2 {
+li.tt-1 {
     display:grid;
-    background-color:pink;
+    background-color: white;
     grid-area: 1/2/2/3;
+    align-self: end;
 }
 
-li.t-3 {
+li.ts-1 {
     display:grid;
-    background-color:green;
+    background-color: white;
     grid-area: 2/2/3/3;
+    align-self: start;
 }
 
-li.t-4 {
+li.ti-2 {
     display:grid;
-    background-color: aqua;
+    background-color: white;
     grid-area: 3/1/5/2;
+    height: fit-content;
+    align-self: center;
 }
 
-li.t-5 {
+li.tt-2 {
     display:grid;
-    background-color:pink;
+    background-color: white;
     grid-area: 3/2/4/3;
+    align-self: end;
 }
 
-li.t-6 {
+li.ts-2 {
     display:grid;
-    background-color:green;
+    background-color: white;
     grid-area: 4/2/5/3;
+    align-self: start;
 }
 
-li.t-7 {
+li.ti-3 {
     display:grid;
-    background-color:aqua;
+    background-color: white;
     grid-area: 5/1/7/2;
+    height: fit-content;
+    align-self: center;
 }
 
-li.t-8 {
+li.tt-3 {
     display:grid;
-    background-color:pink;
+    background-color: white;
     grid-area: 5/2/6/3;
+    align-self: end;
 }
 
-li.t-9 {
+li.ts-3 {
     display:grid;
-    background-color:green;
+    background-color: white;
     grid-area: 6/2/7/3;
+    align-self: start;
 }
 
-li.t-10 {
+li.ti-4 {
     display:grid;
-    background-color: aqua;
+    background-color: white;
     grid-area: 7/1/9/2;
+    height: fit-content;
+    align-self: center;
 }
 
-li.t-11 {
+li.tt-4 {
     display:grid;
-    background-color:pink;
+    background-color: white;
     grid-area: 7/2/8/3;
+    align-self: end;
 }
 
-li.t-12 {
+li.ts-4 {
     display:grid;
-    background-color:green;
+    background-color: white;
     grid-area: 8/2/9/3;
+    align-self: start;
+}
+
+.trending>ul>li>img {
+    width: 45px;
+    height:45px;
+    background-color: white;
 }
