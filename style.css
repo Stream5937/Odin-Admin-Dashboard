@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding:0px;
+    box-sizing: border-box;
 }
 
 :root {
@@ -27,7 +28,7 @@ li {
     width: 100vw;
     height: 100vh;
     display:grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 6fr;
     grid-template-rows: 1fr 5fr;
 }
 
@@ -43,10 +44,10 @@ li {
 .header {
     display:grid;
     grid-area: 1/2/2/3;
-    background-color: lightsalmon;
+   /* background-color: lightsalmon;*/
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr ; /*auto repeat(3fr);*/
-    gap: 0px;
+   /* gap: 0px; */
 }
 
 
@@ -156,8 +157,8 @@ li {
     height: 60px;
     grid-template-rows: 1fr; 
     grid-template-columns: 1fr 6fr 2fr 1fr 2fr;
-    background-color: grey; 
-    gap:3px;
+    background-color:white; 
+   /* gap:3px; */
 }
 
 
@@ -176,6 +177,14 @@ li {
 #h-2 {
     display:grid;
     grid-area: 1/2/2/3;
+}
+
+#h-2 > input {
+    background-color:aqua;
+    border:none;
+    border-radius: 20px;
+    height: 1.5rem;
+    
 }
 
 
@@ -213,8 +222,8 @@ li {
     height: 60px;
     grid-template-rows: 1fr; 
     grid-template-columns:1fr 6fr repeat(3,1fr);
-    background-color: grey; 
-    gap:2px;
+    background-color:white; 
+   /* gap:2px;*/
 }
 
 .header div.upper div,
