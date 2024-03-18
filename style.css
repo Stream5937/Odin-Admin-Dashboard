@@ -30,7 +30,7 @@ li {
 .sidebar {
     display:grid;
     grid-area: 1/1/3/2; /* start row/col/  end row/col */
-    background-color:darkcyan;
+    background-color:cornflowerblue;        /* rgb(70, 140, 200);*/
     grid-template-rows: 0.75fr 2fr 1fr 1.25fr ;
     gap: 5px;
     color: white;
@@ -250,7 +250,7 @@ li {
 button {
     width: 10ch;
     height:4ch;
-    background-color: cornflowerblue;
+    background-color:cornflowerblue;        /* rgb(70, 140, 200);*/
     color:white;
     border: none;
     border-radius: 32px;
@@ -275,32 +275,76 @@ button:active {
 .content >div.projects {
     grid-area: 1/1/2/2;
     display: grid;
-    grid-template-rows: 1fr 9fr;        /* 2 rows   */
+    grid-template-rows: 1fr 12fr;        /* 2 rows   */
     grid-template-columns: 1fr;         /* 1 column */
 }
 
-.projects  > h3 {
+.projects>h3 {
     grid-area: 1/1/2/2;
+    align-self: end;
+    padding: 6px;
 }
 
 .projects > ul {
     display: grid;
     grid-area: 2/1/3/2;
-    background-color: pink;
+    background-color: aqua;
     width: 100%;
     resize: both;
     overflow: auto;
-    grid-template-rows: repeat(2  minmax(150px, 1fr));
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 5px;
+    grid-template-rows: repeat(2  minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 15px;
+    padding-left: 20px;
 }
 
 .projects > ul > li {
     display: grid;
-    width: 250px;
-    height: 150px;
+    width: 420px;
+    height: 200px;
     background-color: white;
+    padding: 15px;
+    border:aqua;
+    border-radius: 10px;
+    border-left:orange;
+    border-style: solid;
+    border-width: 6px;
 }
+
+.projects > ul > li > span {
+    justify-self: end;
+}
+
+.projects > ul > li > span > ul {
+    display:grid;
+    width: 80%;
+    height: 30%;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:"... icon1 icon2 icon3 ";
+}
+
+#p-1 {
+    display:grid;
+    grid-area: icon1;
+  }
+  
+  #p-2 {
+    display:grid;
+    grid-area: icon2;
+  }
+  
+  #p-3 {
+    display:grid;
+    grid-area:icon3;
+  }
+
+  #p-1>img,
+  #p-2>img,
+  #p-3>img {
+    width:20px;
+    height:20px;
+  }
 
 /*-------------------------------- .content 2nd column  .content.notices --------------------------------*/
 .content>div.notices {
@@ -321,6 +365,8 @@ button:active {
     display:grid;
     width: 100%;
     grid-area: 1/1/2/2;
+    align-self: end;
+    padding-left:6px;
 }
 
 .notices div.announcements {
@@ -328,7 +374,7 @@ button:active {
     grid-area: 2/1/3/2;
     width: 85%;
     height:95%;
-    margin: 0px 0px 0px 10px;
+    margin: 20px 0px 0px 10px;
     background-color: white;
     border-radius: 5px;  
 }
@@ -351,7 +397,7 @@ button:active {
 .a-2,
 .a-3 {
     display:grid;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     padding: 0px 8px ;
     width: 90%;
 }
@@ -373,6 +419,8 @@ button:active {
     display:grid;
     width: 100%;
     grid-area: 3/1/4/2;
+    align-self: end;
+    padding-left:6px;
 }
 
 .notices>div.trending {
@@ -380,7 +428,7 @@ button:active {
     grid-area:4/1/5/2;
     width: 85%;
     height:85%;
-    margin: 0px 0px 0px 10px;
+    margin: 30px 0px 0px 10px;
     background-color: white;
     border-radius: 5px; 
 }
